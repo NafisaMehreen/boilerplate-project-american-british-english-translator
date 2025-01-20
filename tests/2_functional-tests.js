@@ -7,8 +7,8 @@ chai.use(chaiHttp);
 
 let Translator = require('../components/translator.js');
 
-suite('Functional Tests', () => {
-    test('Translation with text and locale fields', function (done) {
+suite('Translation with text and locale fields', function () {
+    test('POST request to /api/translate', function (done) {
         chai.request(server)
             .post('/api/translate')
             .send({
@@ -22,8 +22,10 @@ suite('Functional Tests', () => {
                 done();
             });
     });
+});
 
-    test('Translation with empty text: POST request to /api/translate', function (done) {
+suite('Translation with empty text', function () {
+    test('POST request to /api/translate', function (done) {
         chai.request(server)
             .post('/api/translate')
             .send({
@@ -36,8 +38,10 @@ suite('Functional Tests', () => {
                 done();
             });
     });
+});
 
-    test('Translation with missing text field: POST request to /api/translate', function (done) {
+suite('Translation with missing text field', function () {
+    test('POST request to /api/translate', function (done) {
         chai.request(server)
             .post('/api/translate')
             .send({
@@ -49,8 +53,10 @@ suite('Functional Tests', () => {
                 done();
             });
     });
+});
 
-    test('Translation with missing locale field: POST request to /api/translate', function (done) { 
+suite('Translation with missing locale field', function () {
+    test('POST request to /api/translate', function (done) {
         chai.request(server)
             .post('/api/translate')
             .send({
@@ -62,8 +68,10 @@ suite('Functional Tests', () => {
                 done();
             });
     });
+});
 
-    test('Translation with text and invalid locale field: POST request to /api/translate', function (done) {
+suite('Translation with text and invalid locale field', function () {
+    test('POST request to /api/translate', function (done) {
         chai.request(server)
             .post('/api/translate')
             .send({
@@ -76,8 +84,10 @@ suite('Functional Tests', () => {
                 done();
             });
     });
+});
 
-    test('Translation with text that needs no translation: POST request to /api/translate', function (done) {
+suite('Translation with text that needs no translation', function () {
+    test('POST request to /api/translate', function (done) {
         chai.request(server)
             .post('/api/translate')
             .send({
