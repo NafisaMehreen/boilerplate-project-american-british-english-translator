@@ -18,7 +18,7 @@ suite('Functional Tests', () => {
             .end(function (err, res) {
                 assert.equal(res.status, 200);
                 assert.equal(res.body.text, "Mangoes are my favorite fruit.");
-                assert.equal(res.body.translation, "Mangoes are my <span class='highlight'>favourite</span> fruit.");
+                assert.equal(res.body.translation, `Mangoes are my <span class="highlight">favourite</span> fruit.`);
                 done();
             });
     });

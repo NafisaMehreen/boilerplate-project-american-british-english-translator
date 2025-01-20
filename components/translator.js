@@ -31,27 +31,27 @@ class Translator {
         for (let word in americanOnly) {
             let regex = new RegExp("\\b" + word + "\\b", "gi");
             translation = translation.replace(regex, (match) => {
-                return highlight ? `<span class='highlight'>${americanOnly[match.toLowerCase()]}</span>` : americanOnly[match.toLowerCase()];
+                return highlight ? `<span class="highlight">${americanOnly[match.toLowerCase()]}</span>` : americanOnly[match.toLowerCase()];
             });
         }
         for (let word in americanToBritishSpelling) {
             let regex = new RegExp("\\b" + word + "\\b", "gi");
             translation = translation.replace(regex, (match) => {
-                return highlight ? `<span class='highlight'>${americanToBritishSpelling[word]}</span>` : americanToBritishSpelling[word];
+                return highlight ? `<span class="highlight">${americanToBritishSpelling[word]}</span>` : americanToBritishSpelling[word];
             });
         }
         for (let title in americanToBritishTitles) {
             let regex = new RegExp("\\b" + title.replace('.', '\\.')+ "(?=\\s|$)", "gi");
             translation = translation.replace(regex, (match) => {
                 let replacement = americanToBritishTitles[title].charAt(0).toUpperCase() + americanToBritishTitles[title].slice(1);
-                return highlight ? `<span class='highlight'>${replacement}</span>` : replacement;
+                return highlight ? `<span class="highlight">${replacement}</span>` : replacement;
             });
 
         }
         let timeRegex = /([0-9]{1,2}):([0-9]{2})/g;
         translation = translation.replace(timeRegex, (match, p1, p2) => {
             let replacement = p1 + "." + p2;
-            return highlight ? `<span class='highlight'>${replacement}</span>` : replacement;
+            return highlight ? `<span class="highlight">${replacement}</span>` : replacement;
         });
         return translation;
     }
@@ -63,7 +63,7 @@ class Translator {
         for (let word of britishOnlySorted) {
             let regex = new RegExp("\\b" + word + "\\b", "gi");
             translation = translation.replace(regex, (match) => {
-                return highlight ? `<span class='highlight'>${britishOnly[match.toLowerCase()]}</span>` : britishOnly[match.toLowerCase()];
+                return highlight ? `<span class="highlight">${britishOnly[match.toLowerCase()]}</span>` : britishOnly[match.toLowerCase()];
             });
         }
     
@@ -71,7 +71,7 @@ class Translator {
             let britishWord = americanToBritishSpelling[americanword];
             let regex = new RegExp("\\b" + britishWord + "\\b", "gi");
             translation = translation.replace(regex, (match) => {
-                return highlight ? `<span class='highlight'>${americanword}</span>` : americanword;
+                return highlight ? `<span class="highlight">${americanword}</span>` : americanword;
             });
         }
         for (let americanTitle in americanToBritishTitles) {
@@ -79,14 +79,14 @@ class Translator {
             let regex = new RegExp("\\b" + britishTitle.replace('.', '\\.')+ "(?=\\s|$)", "gi");
             translation = translation.replace(regex, (match) => {
                 let replacement = americanTitle.charAt(0).toUpperCase() + americanTitle.slice(1);
-                return highlight ? `<span class='highlight'>${replacement}</span>` : replacement;
+                return highlight ? `<span class="highlight">${replacement}</span>` : replacement;
             });
         }
 
         let timeRegex = /([0-9]{1,2})\.([0-9]{2})/g;
         translation = translation.replace(timeRegex, (match, p1, p2) => {
             let replacement = p1 + ":" + p2;
-            return highlight ? `<span class='highlight'>${replacement}</span>` : replacement;
+            return highlight ? `<span class="highlight">${replacement}</span>` : replacement;
         });
 
         return translation;

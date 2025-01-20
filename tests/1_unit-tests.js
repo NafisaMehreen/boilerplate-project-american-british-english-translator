@@ -179,7 +179,7 @@ suite('Unit Tests', () => {
             let translator = new Translator();
             let text = 'Mangoes are my favorite fruit.';
             let locale = 'american-to-british';
-            let expected = `Mangoes are my <span class='highlight'>favourite</span> fruit.`;
+            let expected = `Mangoes are my <span class="highlight">favourite</span> fruit.`;
             assert.deepEqual(translator.translate(text, locale, true), { text: text, translation: expected});
         });
 
@@ -187,7 +187,7 @@ suite('Unit Tests', () => {
             let translator = new Translator();
             let text = 'I ate yogurt for breakfast.';
             let locale = 'american-to-british';
-            let expected = `I ate <span class='highlight'>yoghurt</span> for breakfast.`;
+            let expected = `I ate <span class="highlight">yoghurt</span> for breakfast.`;
             assert.deepEqual(translator.translate(text, locale, true), { text: text, translation: expected});
         });
 
@@ -195,7 +195,7 @@ suite('Unit Tests', () => {
             let translator = new Translator();
             let text = 'We watched the footie match for a while.';
             let locale = 'british-to-american';
-            let expected = `We watched the <span class='highlight'>soccer</span> match for a while.`;
+            let expected = `We watched the <span class="highlight">soccer</span> match for a while.`;
             assert.deepEqual(translator.translate(text, locale, true), { text: text, translation: expected});
         });
 
@@ -203,7 +203,7 @@ suite('Unit Tests', () => {
             let translator = new Translator();
             let text = 'Paracetamol takes up to an hour to work.';
             let locale = 'british-to-american';
-            let expected = `<span class='highlight'>Tylenol</span> takes up to an hour to work.`;
+            let expected = `<span class="highlight">Tylenol</span> takes up to an hour to work.`;
             assert.deepEqual(translator.translate(text, locale, true), { text: text, translation: expected});
         });
     });
