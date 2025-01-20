@@ -204,44 +204,46 @@ suite('Unit Tests', () => {
                 { text: 'Tea time is usually around 4 or 4.30.', translation: 'Tea time is usually around 4 or 4:30.' });
         });
     });
-});
 
-suite('Highlight Translation - Mangoes are my favorite fruit.', () => {
-    test('Highlight', () => {
-        let translator = new Translator();
-        let text = 'Mangoes are my favorite fruit.';
-        let locale = 'american-to-british';
-        let expected = `Mangoes are my <span class="highlight">favourite</span> fruit.`;
-        assert.deepEqual(translator.translate(text, locale, true), { text: text, translation: expected });
+    suite('Highlight Translation - Mangoes are my favorite fruit.', () => {
+        test('Highlight', () => {
+            let translator = new Translator();
+            let text = 'Mangoes are my favorite fruit.';
+            let locale = 'american-to-british';
+            let expected = `Mangoes are my <span class="highlight">favourite</span> fruit.`;
+            assert.deepEqual(translator.translate(text, locale, true), { text: text, translation: expected });
+        });
+    });
+
+    suite('Highlight Translation - I ate yogurt for breakfast.', () => {
+        test('Highlight', () => {
+            let translator = new Translator();
+            let text = 'I ate yogurt for breakfast.';
+            let locale = 'american-to-british';
+            let expected = `I ate <span class="highlight">yoghurt</span> for breakfast.`;
+            assert.deepEqual(translator.translate(text, locale, true), { text: text, translation: expected });
+        });
+    });
+
+    suite('Highlight Translation - We watched the footie match for a while.', () => {
+        test('Highlight', () => {
+            let translator = new Translator();
+            let text = 'We watched the footie match for a while.';
+            let locale = 'british-to-american';
+            let expected = `We watched the <span class="highlight">soccer</span> match for a while.`;
+            assert.deepEqual(translator.translate(text, locale, true), { text: text, translation: expected });
+        });
+    });
+
+    suite('Highlight Translation - Paracetamol takes up to an hour to work.', () => {
+        test('Highlight', () => {
+            let translator = new Translator();
+            let text = 'Paracetamol takes up to an hour to work.';
+            let locale = 'british-to-american';
+            let expected = `<span class="highlight">Tylenol</span> takes up to an hour to work.`;
+            assert.deepEqual(translator.translate(text, locale, true), { text: text, translation: expected });
+        });
     });
 });
 
-suite('Highlight Translation - I ate yogurt for breakfast.', () => {
-    test('Highlight', () => {
-        let translator = new Translator();
-        let text = 'I ate yogurt for breakfast.';
-        let locale = 'american-to-british';
-        let expected = `I ate <span class="highlight">yoghurt</span> for breakfast.`;
-        assert.deepEqual(translator.translate(text, locale, true), { text: text, translation: expected });
-    });
-});
 
-suite('Highlight Translation - We watched the footie match for a while.', () => {
-    test('Highlight', () => {
-        let translator = new Translator();
-        let text = 'We watched the footie match for a while.';
-        let locale = 'british-to-american';
-        let expected = `We watched the <span class="highlight">soccer</span> match for a while.`;
-        assert.deepEqual(translator.translate(text, locale, true), { text: text, translation: expected });
-    });
-});
-
-suite('Highlight Translation - Paracetamol takes up to an hour to work.', () => {
-    test('Highlight', () => {
-        let translator = new Translator();
-        let text = 'Paracetamol takes up to an hour to work.';
-        let locale = 'british-to-american';
-        let expected = `<span class="highlight">Tylenol</span> takes up to an hour to work.`;
-        assert.deepEqual(translator.translate(text, locale, true), { text: text, translation: expected });
-    });
-});
